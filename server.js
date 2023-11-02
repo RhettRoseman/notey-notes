@@ -37,7 +37,7 @@ console.log(json);
   // console.log(module);
 
  // res.sendFile(path.join(__dirname + '/db/db.json'));
-  console.log("bobo the gogo")
+
   fs.writeFile('./db/db.json', JSON.stringify(json), (err, data) => {
     if (err) {
       console.error(err);
