@@ -30,16 +30,19 @@ app.get('/api/notes', (req, res) =>  {
 
 app.post('/api/notes', (req, res) =>  {
   console.log(req.body)
-  res.sendFile(path.join(__dirname + '/db/db.json'));
+  // module.exports = require('/lib/express.js');
+  console.log(module);
+
+ // res.sendFile(path.join(__dirname + '/db/db.json'));
   console.log("bobo the gogo")
-  fs.writeFile('/db/db.json', 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    console.log("big boy mgoy");
+  // fs.writeFile('./db/db.json', 'utf8', (err, data) => {
+  //   if (err) {
+  //     console.error(err);
+  //     return;
+  //   }
+  //   console.log("big boy mgoy");
   });
-});
+//});
 
 
 // app.get('*', (req, res) => {
@@ -67,3 +70,4 @@ app.listen(PORT, () =>
 
 
 );
+
