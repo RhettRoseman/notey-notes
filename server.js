@@ -6,7 +6,7 @@ const fs = require('fs');
 
 const path = require('path');
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Initialize our app variable by setting it to the value of express()
 const app = express();
@@ -60,7 +60,7 @@ app.get('/api', (req, res) => res.json(termData));
 
 // require('/db/db.json')(app);
 
-require('/api/notes.html')(app);
+// require('/api/notes')(app);
 
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
