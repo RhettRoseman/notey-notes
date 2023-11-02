@@ -1,6 +1,8 @@
 // Import express package
 const express = require('express');
 
+const json = require('./db/db.json');
+
 const fs = require('fs');
 // Require the JSON file and assign it to a variable called `termData`
 
@@ -30,19 +32,20 @@ app.get('/api/notes', (req, res) =>  {
 
 app.post('/api/notes', (req, res) =>  {
   console.log(req.body)
-  // module.exports = require('/lib/express.js');
-  console.log(module);
+  json.push(req.body);
+console.log(json);
+  // console.log(module);
 
  // res.sendFile(path.join(__dirname + '/db/db.json'));
   console.log("bobo the gogo")
-  // fs.writeFile('./db/db.json', 'utf8', (err, data) => {
-  //   if (err) {
-  //     console.error(err);
-  //     return;
-  //   }
-  //   console.log("big boy mgoy");
+  fs.writeFile('./db/db.json', JSON.stringify(json), (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    res.send(200);
   });
-//});
+});
 
 
 // app.get('*', (req, res) => {
